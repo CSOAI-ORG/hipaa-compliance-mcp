@@ -23,6 +23,9 @@ from mcp.server.fastmcp import FastMCP
 # ── Authentication ──────────────────────────────────────────────
 sys.path.insert(0, os.path.expanduser("~/clawd/meok-labs-engine/shared"))
 from auth_middleware import check_access
+from compliance_neural import ComplianceNeuralNet
+
+_neural_net = ComplianceNeuralNet("hipaa")
 
 _MEOK_API_KEY = os.environ.get("MEOK_API_KEY", "")
 
@@ -414,6 +417,34 @@ def minimum_necessary_check(
         "compliance_status": "COMPLIANT" if not issues else "REVIEW_NEEDED",
         "issues": issues,
     }, indent=2)
+
+
+@mcp.tool()
+def predict_risk_neural(
+    system_name: str, uses_biometric: bool = False, uses_health_data: bool = False,
+    has_human_oversight: bool = True, affected_users: int = 0, sector: str = "",
+    has_documentation: bool = False, prior_incidents: int = 0, api_key: str = "") -> dict:
+    """Neural network-based risk prediction that improves from every compliance check."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg}
+    features = _neural_net.extract_features_from_system(
+        system_name=system_name, uses_biometric=uses_biometric,
+        uses_health_data=uses_health_data, has_human_oversight=has_human_oversight,
+        affected_users=affected_users, sector=sector, has_documentation=has_documentation,
+        prior_incidents=prior_incidents)
+    prediction = _neural_net.predict_risk(features)
+    prediction["system_name"] = system_name
+    return prediction
+
+
+@mcp.tool()
+def neural_insights(api_key: str = "") -> dict:
+    """Get aggregate learning insights from the neural compliance model."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg}
+    return _neural_net.get_insights()
 
 
 def main():
