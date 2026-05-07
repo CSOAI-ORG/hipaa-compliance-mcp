@@ -74,3 +74,4 @@ GET  https://meok-attestation-api.vercel.app/verify/{cert_id}
 ## License
 
 MIT
+<!-- mcp-name: io.github.CSOAI-ORG/hipaa-compliance-mcp -->
