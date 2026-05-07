@@ -157,6 +157,23 @@ def assess_hipaa_compliance(
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+
+    Args:
+        organization_name (str): The organization name to analyze or process.
+        has_risk_analysis (bool): The has risk analysis to analyze or process.
+        has_security_officer (bool): The has security officer to analyze or process.
+        has_workforce_training (bool): The has workforce training to analyze or process.
+        has_incident_procedures (bool): The has incident procedures to analyze or process.
+        has_contingency_plan (bool): The has contingency plan to analyze or process.
+        has_facility_controls (bool): The has facility controls to analyze or process.
+        has_workstation_security (bool): The has workstation security to analyze or process.
+        has_access_control (bool): The has access control to analyze or process.
+        has_audit_controls (bool): The has audit controls to analyze or process.
+        has_transmission_security (bool): The has transmission security to analyze or process.
+        has_encryption (bool): The has encryption to analyze or process.
+        has_authentication (bool): The has authentication to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -259,6 +276,16 @@ def check_phi_handling(
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+
+    Args:
+        data_description (str): The data description to analyze or process.
+        identifiers_present (str): The identifiers present to analyze or process.
+        storage_encrypted (bool): The storage encrypted to analyze or process.
+        transmission_encrypted (bool): The transmission encrypted to analyze or process.
+        access_logged (bool): The access logged to analyze or process.
+        minimum_necessary_applied (bool): The minimum necessary applied to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -339,6 +366,15 @@ def generate_baa(
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+
+    Args:
+        covered_entity_name (str): The covered entity name to analyze or process.
+        business_associate_name (str): The business associate name to analyze or process.
+        services_description (str): The services description to analyze or process.
+        effective_date (str): The effective date to analyze or process.
+        term_years (int): The term years to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -417,6 +453,16 @@ def breach_notification_check(
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+
+    Args:
+        breach_date (str): The breach date to analyze or process.
+        discovery_date (str): The discovery date to analyze or process.
+        individuals_affected (int): The individuals affected to analyze or process.
+        notification_sent (bool): The notification sent to analyze or process.
+        notification_date (str): The notification date to analyze or process.
+        involves_unsecured_phi (bool): The involves unsecured phi to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -517,6 +563,16 @@ def minimum_necessary_check(
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+
+    Args:
+        data_request_description (str): The data request description to analyze or process.
+        requester_role (str): The requester role to analyze or process.
+        purpose (str): The purpose to analyze or process.
+        data_elements_requested (str): The data elements requested to analyze or process.
+        role_based_access (bool): The role based access to analyze or process.
+        policy_documented (bool): The policy documented to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -595,6 +651,18 @@ def predict_risk_neural(
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+
+    Args:
+        system_name (str): The system name to analyze or process.
+        uses_biometric (bool): The uses biometric to analyze or process.
+        uses_health_data (bool): The uses health data to analyze or process.
+        has_human_oversight (bool): The has human oversight to analyze or process.
+        affected_users (int): The affected users to analyze or process.
+        sector (str): The sector to analyze or process.
+        has_documentation (bool): The has documentation to analyze or process.
+        prior_incidents (int): The prior incidents to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -642,6 +710,10 @@ def neural_insights(api_key: str = "") -> dict:
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+
+    Args:
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
