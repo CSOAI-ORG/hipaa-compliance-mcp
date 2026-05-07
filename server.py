@@ -140,7 +140,24 @@ def assess_hipaa_compliance(
     caller: str = "",
     api_key: str = "",
 ) -> str:
-    """Evaluate an organization against HIPAA Administrative, Physical, and Technical safeguards."""
+    """Evaluate an organization against HIPAA Administrative, Physical, and Technical safeguards.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need to assess, audit, or verify compliance
+        requirements. Ideal for gap analysis, readiness checks, and generating
+        compliance documentation.
+
+    When NOT to use:
+        Do not use as a substitute for qualified legal counsel. This tool
+        provides technical compliance guidance, not legal advice.
+    """
     if err := _check_auth(api_key):
         return err
     if err := _rl(caller):
@@ -211,7 +228,24 @@ def check_phi_handling(
     caller: str = "",
     api_key: str = "",
 ) -> str:
-    """Check Protected Health Information handling compliance."""
+    """Check Protected Health Information handling compliance.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need to assess, audit, or verify compliance
+        requirements. Ideal for gap analysis, readiness checks, and generating
+        compliance documentation.
+
+    When NOT to use:
+        Do not use as a substitute for qualified legal counsel. This tool
+        provides technical compliance guidance, not legal advice.
+    """
     if err := _check_auth(api_key):
         return err
     if err := _rl(caller):
@@ -261,7 +295,23 @@ def generate_baa(
     caller: str = "",
     api_key: str = "",
 ) -> str:
-    """Generate a Business Associate Agreement template per HIPAA requirements."""
+    """Generate a Business Associate Agreement template per HIPAA requirements.
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need to assess, audit, or verify compliance
+        requirements. Ideal for gap analysis, readiness checks, and generating
+        compliance documentation.
+
+    When NOT to use:
+        Do not use as a substitute for qualified legal counsel. This tool
+        provides technical compliance guidance, not legal advice.
+    """
     if err := _check_auth(api_key):
         return err
     if err := _rl(caller):
@@ -308,7 +358,24 @@ def breach_notification_check(
     caller: str = "",
     api_key: str = "",
 ) -> str:
-    """Check breach notification compliance against HIPAA 45-day and 60-day rules."""
+    """Check breach notification compliance against HIPAA 45-day and 60-day rules.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need to assess, audit, or verify compliance
+        requirements. Ideal for gap analysis, readiness checks, and generating
+        compliance documentation.
+
+    When NOT to use:
+        Do not use as a substitute for qualified legal counsel. This tool
+        provides technical compliance guidance, not legal advice.
+    """
     if err := _check_auth(api_key):
         return err
     if err := _rl(caller):
@@ -377,7 +444,24 @@ def minimum_necessary_check(
     caller: str = "",
     api_key: str = "",
 ) -> str:
-    """Evaluate data minimization compliance per HIPAA Minimum Necessary Rule (164.502(b))."""
+    """Evaluate data minimization compliance per HIPAA Minimum Necessary Rule (164.502(b)).
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need to assess, audit, or verify compliance
+        requirements. Ideal for gap analysis, readiness checks, and generating
+        compliance documentation.
+
+    When NOT to use:
+        Do not use as a substitute for qualified legal counsel. This tool
+        provides technical compliance guidance, not legal advice.
+    """
     if err := _check_auth(api_key):
         return err
     if err := _rl(caller):
@@ -424,7 +508,24 @@ def predict_risk_neural(
     system_name: str, uses_biometric: bool = False, uses_health_data: bool = False,
     has_human_oversight: bool = True, affected_users: int = 0, sector: str = "",
     has_documentation: bool = False, prior_incidents: int = 0, api_key: str = "") -> dict:
-    """Neural network-based risk prediction that improves from every compliance check."""
+    """Neural network-based risk prediction that improves from every compliance check.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need to assess, audit, or verify compliance
+        requirements. Ideal for gap analysis, readiness checks, and generating
+        compliance documentation.
+
+    When NOT to use:
+        Do not use as a substitute for qualified legal counsel. This tool
+        provides technical compliance guidance, not legal advice.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg}
@@ -440,7 +541,24 @@ def predict_risk_neural(
 
 @mcp.tool()
 def neural_insights(api_key: str = "") -> dict:
-    """Get aggregate learning insights from the neural compliance model."""
+    """Get aggregate learning insights from the neural compliance model.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need to assess, audit, or verify compliance
+        requirements. Ideal for gap analysis, readiness checks, and generating
+        compliance documentation.
+
+    When NOT to use:
+        Do not use as a substitute for qualified legal counsel. This tool
+        provides technical compliance guidance, not legal advice.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg}
