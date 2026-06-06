@@ -8,6 +8,15 @@
 > HIPAA healthcare compliance MCP — Administrative, Physical, Technical safeguards assessment, PHI ...
 
 HIPAA healthcare compliance MCP — Administrative, Physical, Technical safeguards assessment, PHI handling, BAA templates, breach notification readiness.
+<div align="center">
+
+# HIPAA Compliance MCP
+
+**HIPAA Healthcare Compliance Assessment — Safeguards, PHI Handling, BAA, Breach Notification**
+
+[![MCP](https://img.shields.io/badge/MCP-Server-blue)](https://github.com/CSOAI-ORG)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+</div>
 
 ---
 
@@ -76,3 +85,79 @@ MIT © [CSOAI-ORG](https://github.com/CSOAI-ORG)
 <p align="center">
   <sub>Built with 💜 by <a href="https://meok.ai">MEOK AI Labs</a> · UK Companies House 16939677</sub>
 </p>
+Comprehensive HIPAA compliance tools for healthcare AI systems and covered entities. Assess administrative, physical, and technical safeguards. Generate Business Associate Agreements (BAAs), handle breach notifications, and enforce minimum necessary policies.
+
+## Tools
+
+| Tool | Description | Parameters |
+|------|-------------|------------|
+| `assess_safeguards` | Assess HIPAA administrative, physical, and technical safeguards | `safeguard_type`, `current_controls` |
+| `check_phi_handling` | Check PHI handling procedures for compliance | `procedures`, `data_types`, `access_patterns` |
+| `generate_baa` | Generate a Business Associate Agreement | `covered_entity`, `business_associate`, `services` |
+| `breach_notification` | Generate breach notification assessment and timeline | `breach_type`, `individuals_affected`, `date_discovered` |
+| `minimum_necessary` | Evaluate minimum necessary policy compliance | `policies`, `access_roles`, `data_elements` |
+| `hipaa_risk_assessment` | Full HIPAA security risk assessment | `current_state`, `organization_type` |
+| `training_gap` | Identify workforce training gaps | `training_records`, `roles` |
+
+## Installation
+
+```bash
+pip install mcp
+```
+
+### Claude Desktop / Cursor / VS Code / Windsurf
+```json
+{
+  "mcpServers": {
+    "hipaa-compliance": {
+      "command": "python",
+      "args": ["path/to/server.py"]
+    }
+  }
+}
+```
+
+## Usage Examples
+
+### Assess safeguards
+```json
+{
+  "safeguard_type": "technical",
+  "current_controls": ["encryption at rest", "access logs", "no MFA"]
+}
+```
+
+### Generate BAA
+```json
+{
+  "covered_entity": "MedHealth AI Corp",
+  "business_associate": "CloudDiagnostics Inc",
+  "services": ["patient data processing", "analytics", "storage"]
+}
+```
+
+## Pricing
+
+- **Free:** 10 assessments/day
+- **Pro:** $99/mo — unlimited assessments + BAA generation
+- **Enterprise:** $499/mo — full audit trail + custom policies
+
+---
+
+*Built by MEOK AI Labs | [meok.ai](https://meok.ai)*
+
+<!-- BUY-LADDER:START -->
+
+## 💸 Try MEOK in 30 seconds — instant buy ladder
+
+| Tier | Price | What you get | Stripe |
+|---|---|---|---|
+| Smoke test | **£1** | Signed sample MCP-Hardening report + Article 50 PDF | <https://buy.stripe.com/dRmcN75ScdQS7oh1Uc8k90U> |
+| Quick Kit | **£9** | EU AI Act Article 50 implementation guide (C2PA + EU-Icon) | <https://buy.stripe.com/cNi00la8s1460ZT0Q88k90V> |
+| Founder Call | **£29** | 30-min 1-on-1 with the founder | <https://buy.stripe.com/8x228ta8s6oqbExaqI8k90W> |
+
+> Refundable. UK Stripe — VAT-clean. Builds on the 81-MCP MEOK fleet.
+> Verify any signed report at <https://meok.ai/verify>.
+
+<!-- BUY-LADDER:END -->
+

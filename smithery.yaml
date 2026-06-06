@@ -1,34 +1,36 @@
 name: hipaa-compliance-mcp
-description: 'HIPAA healthcare compliance assessment tools for AI agents. Capabilities: assess safeguards, check PHI handling, generate BAA, breach notification, minimum necessary. Built by MEOK AI Labs.'
-version: 1.0.0
+description: "HIPAA healthcare compliance assessment - Administrative/Physical/Technical safeguards audit, PHI handling verification, BAA template generation, breach notification compliance, and minimum necessary rule evaluation"
+version: 1.0.6
+author: MEOK AI Labs
+homepage: https://safetyof.ai
+repository: https://github.com/MEOK-AI-Labs/hipaa-compliance-mcp
+license: MIT
+categories:
+  - compliance
+  - healthcare
+  - privacy
+
 tools:
-- name: assess_hipaa_compliance
-  description: Evaluate against HIPAA Administrative, Physical, and Technical safeguards
-  parameters:
-  - name: caller
-    type: string
-    required: false
-- name: check_phi_handling
-  description: Check Protected Health Information handling compliance
-  parameters:
-  - name: caller
-    type: string
-    required: false
-- name: generate_baa
-  description: Generate a Business Associate Agreement template
-  parameters:
-  - name: caller
-    type: string
-    required: false
-- name: breach_notification_check
-  description: Check breach notification compliance against 45/60-day rules
-  parameters:
-  - name: caller
-    type: string
-    required: false
-- name: minimum_necessary_check
-  description: Evaluate data minimization per HIPAA Minimum Necessary Rule
-  parameters:
-  - name: caller
-    type: string
-    required: false
+  - name: assess_hipaa_compliance
+    description: "Evaluate an organization against HIPAA Administrative, Physical, and Technical safeguards with weighted scoring and gap identification"
+  - name: check_phi_handling
+    description: "Check Protected Health Information handling compliance per HIPAA rules - identifies 18 PHI identifiers, encryption requirements, and access control gaps"
+  - name: generate_baa
+    description: "Generate a Business Associate Agreement template per HIPAA requirements with all 10 required provisions under 45 CFR 164"
+  - name: breach_notification_check
+    description: "Check breach notification compliance against HIPAA 60-day rule with individual notification, HHS reporting, and media notification requirements"
+  - name: minimum_necessary_check
+    description: "Evaluate data minimization compliance per HIPAA Minimum Necessary Rule (164.502(b)) with role-based access and sensitive data detection"
+  - name: predict_risk_neural
+    description: "Neural network-based risk prediction that improves from every compliance check"
+  - name: neural_insights
+    description: "Get aggregate learning insights from the neural compliance model"
+
+build:
+  type: python
+  entrypoint: server.py
+  dependencies:
+    - mcp>=1.0.0
+
+runtime:
+  python: ">=3.10"

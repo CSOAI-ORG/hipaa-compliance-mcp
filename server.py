@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """
+Buy Pro: https://www.csoai.org/checkout
+
 HIPAA Compliance MCP Server
 ============================
 By MEOK AI Labs | https://meok.ai
@@ -21,11 +23,20 @@ from collections import defaultdict
 from mcp.server.fastmcp import FastMCP
 
 # ── Authentication ──────────────────────────────────────────────
-sys.path.insert(0, os.path.expanduser("~/clawd/meok-labs-engine/shared"))
-from auth_middleware import check_access
-from compliance_neural import ComplianceNeuralNet
+try:
+    from meok_auth import check_access
+except ImportError:
+    try:
+        from auth_middleware import check_access
+    except ImportError:
+        def check_access(api_key: str) -> tuple:
+            return (True, "Open access", "community")
 
-_neural_net = ComplianceNeuralNet("hipaa")
+try:
+    from compliance_neural import ComplianceNeuralNet
+    _neural_net = ComplianceNeuralNet("hipaa")
+except ImportError:
+    _neural_net = None
 
 _MEOK_API_KEY = os.environ.get("MEOK_API_KEY", "")
 
@@ -681,6 +692,23 @@ def predict_risk_neural(
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg}
+    if _neural_net is None:
+        return {
+            "system_name": system_name,
+            "risk_level": "MEDIUM",
+            "confidence": "low",
+            "note": "Neural net unavailable. Using rule-based fallback. Install compliance_neural for improved predictions.",
+            "factors": {
+                "uses_biometric": uses_biometric,
+                "uses_health_data": uses_health_data,
+                "has_human_oversight": has_human_oversight,
+                "affected_users": affected_users,
+                "sector": sector,
+                "has_documentation": has_documentation,
+                "prior_incidents": prior_incidents,
+            },
+            "recommendation": "Implement neural-net-based risk prediction for higher accuracy.",
+        }
     features = _neural_net.extract_features_from_system(
         system_name=system_name, uses_biometric=uses_biometric,
         uses_health_data=uses_health_data, has_human_oversight=has_human_oversight,
@@ -732,6 +760,13 @@ def neural_insights(api_key: str = "") -> dict:
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg}
+    if _neural_net is None:
+        return {
+            "status": "fallback",
+            "note": "Neural net unavailable. Install compliance_neural for insights.",
+            "model": "hipaa",
+            "total_assessments": 0,
+        }
     return _neural_net.get_insights()
 
 
