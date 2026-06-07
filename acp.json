@@ -1,0 +1,25 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "hipaa-compliance-mcp",
+    "description": "Hipaa Compliance MCP Server by MEOK AI Labs",
+    "version": "1.0.9",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "hipaa-compliance-mcp"
+      }
+    ],
+    "capabilities": [
+      "assess_hipaa_compliance",
+      "check_phi_handling",
+      "generate_baa",
+      "breach_notification_check",
+      "minimum_necessary_check",
+      "predict_risk_neural",
+      "neural_insights"
+    ]
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "name": "hipaa-compliance-mcp",
+  "description": "Hipaa Compliance MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/hipaa-compliance-mcp.html",
+  "version": "1.0.9",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "assess_hipaa_compliance",
+      "name": "Assess Hipaa Compliance",
+      "description": "assess_hipaa_compliance via hipaa-compliance-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "check_phi_handling",
+      "name": "Check Phi Handling",
+      "description": "check_phi_handling via hipaa-compliance-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "generate_baa",
+      "name": "Generate Baa",
+      "description": "generate_baa via hipaa-compliance-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "breach_notification_check",
+      "name": "Breach Notification Check",
+      "description": "breach_notification_check via hipaa-compliance-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "minimum_necessary_check",
+      "name": "Minimum Necessary Check",
+      "description": "minimum_necessary_check via hipaa-compliance-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "predict_risk_neural",
+      "name": "Predict Risk Neural",
+      "description": "predict_risk_neural via hipaa-compliance-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "neural_insights",
+      "name": "Neural Insights",
+      "description": "neural_insights via hipaa-compliance-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
