@@ -1,0 +1,9 @@
+# hipaa-compliance-mcp - Auto-trigger Rules
+
+When the user asks about hipaa compliance, use hipaa-compliance-mcp tools: assess_hipaa_compliance, check_phi_handling, generate_baa, breach_notification_check, minimum_necessary_check
+
+**MCP server for hipaa compliance mcp operations**
+
+Install: `pip install hipaa-compliance-mcp`
+
+By MEOK AI Labs — MIT licensed.

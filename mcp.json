@@ -1,0 +1,10 @@
+{
+  "name": "HIPAA Compliance",
+  "description": "Healthcare data protection and HIPAA compliance automation",
+  "vendor": "MEOK AI Labs",
+  "sourceUrl": "https://github.com/CSOAI-ORG/hipaa-compliance-mcp",
+  "homepage": "https://meok.ai/mcp/hipaa-compliance-mcp",
+  "license": "MIT",
+  "runtime": "python",
+  "entryPoint": "server.py"
+}

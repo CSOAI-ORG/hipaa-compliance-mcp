@@ -1,0 +1,34 @@
+{
+  "name": "hipaa-compliance-mcp",
+  "title": "Hipaa Compliance Mcp",
+  "description": "HIPAA healthcare compliance assessment tools for AI agents. Capabilities: assess safeguards, check PHI handling, generate BAA, breach notification, minimum necessary. Built by MEOK AI Labs.",
+  "version": "1.0.9",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "assess_hipaa_compliance"
+    },
+    {
+      "name": "check_phi_handling"
+    },
+    {
+      "name": "generate_baa"
+    },
+    {
+      "name": "breach_notification_check"
+    },
+    {
+      "name": "minimum_necessary_check"
+    },
+    {
+      "name": "predict_risk_neural"
+    },
+    {
+      "name": "neural_insights"
+    }
+  ]
+}
