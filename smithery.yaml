@@ -1,36 +1,37 @@
-name: hipaa-compliance-mcp
-description: "HIPAA healthcare compliance assessment - Administrative/Physical/Technical safeguards audit, PHI handling verification, BAA template generation, breach notification compliance, and minimum necessary rule evaluation"
-version: 1.0.6
-author: MEOK AI Labs
-homepage: https://safetyof.ai
-repository: https://github.com/MEOK-AI-Labs/hipaa-compliance-mcp
-license: MIT
-categories:
-  - compliance
-  - healthcare
-  - privacy
-
-tools:
-  - name: assess_hipaa_compliance
-    description: "Evaluate an organization against HIPAA Administrative, Physical, and Technical safeguards with weighted scoring and gap identification"
-  - name: check_phi_handling
-    description: "Check Protected Health Information handling compliance per HIPAA rules - identifies 18 PHI identifiers, encryption requirements, and access control gaps"
-  - name: generate_baa
-    description: "Generate a Business Associate Agreement template per HIPAA requirements with all 10 required provisions under 45 CFR 164"
-  - name: breach_notification_check
-    description: "Check breach notification compliance against HIPAA 60-day rule with individual notification, HHS reporting, and media notification requirements"
-  - name: minimum_necessary_check
-    description: "Evaluate data minimization compliance per HIPAA Minimum Necessary Rule (164.502(b)) with role-based access and sensitive data detection"
-  - name: predict_risk_neural
-    description: "Neural network-based risk prediction that improves from every compliance check"
-  - name: neural_insights
-    description: "Get aggregate learning insights from the neural compliance model"
-
-build:
-  type: python
-  entrypoint: server.py
-  dependencies:
-    - mcp>=1.0.0
-
-runtime:
-  python: ">=3.10"
+# smithery.yaml — Smithery (https://smithery.ai) submission payload
+# Repo: CSOAI-ORG/hipaa-compliance-mcp
+# Generated: 2026-06-09
+# Transport: stdio (PyPI package, installed via uvx)
+# See: DISTRIBUTION_GAPS_2026-06-08.md for the channel strategy
+startCommand:
+  type: stdio
+  timeout: 120000
+  pingInterval: 5000
+  pingTimeout: 30000
+  configSchema:
+    type: object
+    required: []
+    properties:
+      apiKey:
+        type: string
+        description: "MEOK API key (optional; required for x402 paywalled tools)"
+        default: ""
+      x402PayTo:
+        type: string
+        description: "USDC address for x402 micropayments (default: meok.ai wallet)"
+        default: ""
+      logLevel:
+        type: string
+        description: "Log level (debug, info, warn, error)"
+        default: "info"
+    additionalProperties: false
+  commandFunction: |-
+    (config) => ({
+      command: 'uvx',
+      args: ['hipaa_compliance'],
+      env: {
+        MEOK_API_KEY: config.apiKey || '',
+        X402_PAY_TO: config.x402PayTo || '',
+        MEOK_LOG_LEVEL: config.logLevel || 'info',
+      }
+    })
