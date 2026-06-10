@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "hipaa-compliance-mcp"
-version = "1.0.9"
+version = "1.0.11"
 readme = "README.md"
 description = "HIPAA healthcare compliance assessment tools for AI agents. Capabilities: assess safeguards, check PHI handling, generate BAA, breach notification, minimum necessary. Built by MEOK AI Labs."
 license = {file = "LICENSE"}
@@ -25,7 +25,7 @@ Repository = "https://github.com/CSOAI-ORG/hipaa-compliance-mcp"
 
 [tool.hatch.build.targets.wheel]
 packages = ["."]
-only-include = ["server.py"]
+only-include = ["auth_middleware.py", "server.py"]
 
 [project.scripts]
 hipaa_compliance_mcp = "server:main"
