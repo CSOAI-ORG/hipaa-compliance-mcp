@@ -1,1 +1,5 @@
 dist/
+
+# Auto-added during alignment sweep
+_pycache__/server.cpython-311.pyc
+__pycache__/server.cpython-314.pyc
