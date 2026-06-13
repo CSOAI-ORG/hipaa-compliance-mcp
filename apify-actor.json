@@ -1,0 +1,17 @@
+{
+  "name": "knowing_yucca/hipaa-compliance-mcp",
+  "title": "MEOK Hipaa Compliance Mcp",
+  "description": "Compliance MCP server: hipaa-compliance-mcp",
+  "readme": "# MEOK Hipaa Compliance Mcp\n\nCompliance MCP from MEOK AI.",
+  "categories": [
+    "AI",
+    "Compliance",
+    "Governance"
+  ],
+  "defaultRunInput": {
+    "tool": "quick_scan",
+    "arguments": {
+      "system": "example"
+    }
+  }
+}
