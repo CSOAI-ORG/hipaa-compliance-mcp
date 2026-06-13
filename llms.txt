@@ -1,42 +1,33 @@
 # hipaa-compliance-mcp
-# **MCP server for hipaa compliance mcp operations**
+> HIPAA Compliance HIPAA compliance for healthcare AI systems handling PHI. By MEOK AI Labs.
 
 ## Install
-```bash
 pip install hipaa-compliance-mcp
-```
 
-## Auth & Rate Limits
-- Free tier: 10 calls/day. No API key required.
-- Pro tier (£79/mo): unlimited + signed attestations.
-- Enterprise (£1,499/mo): white-label.
+## Auth
+- Free tier: 100 calls/month, no API key needed
+- Pro tier: unlimited, set MEOK_API_KEY env var
 
 ## Tools
 
-### `assess_hipaa_compliance`
-Tool: assess_hipaa_compliance
+### quick_scan
+Instant compliance check from a system description. No API key required.
+- `system` (str): One-sentence AI system description
+- Returns: compliance_status, top_obligations
 
-### `check_phi_handling`
-Check Protected Health Information handling compliance.
+### deadline_check
+Regulatory deadlines with days remaining.
+- Returns: List of dates with days_remaining
 
-### `generate_baa`
-Generate a Business Associate Agreement template per HIPAA requirements.
+### framework_scan
+Detailed compliance assessment.
+- `framework` (str, required): HIPAA or other framework
+- `system` (str, required): System description
+- Returns: compliance_score, gaps, remediation
 
-### `breach_notification_check`
-Check breach notification compliance against HIPAA 45-day and 60-day rules.
+## Endpoints
+- MCP: https://gateway.meok.ai/mcp
+- A2A: https://gateway.meok.ai/.well-known/agent-card.json
 
-### `minimum_necessary_check`
-Evaluate data minimization compliance per HIPAA Minimum Necessary Rule (164.502(b)).
-
-### `predict_risk_neural`
-Neural network-based risk prediction that improves from every compliance check.
-
-### `neural_insights`
-Get aggregate learning insights from the neural compliance model.
-
-
-## Maintainer
-MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
-
-## Pairs with
-Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.
+## License
+MIT — https://github.com/CSOAI-ORG/hipaa-compliance-mcp/blob/main/LICENSE
