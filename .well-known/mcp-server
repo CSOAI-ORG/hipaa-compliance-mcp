@@ -1,0 +1,5 @@
+{
+  "name": "hipaa-compliance-mcp",
+  "description": "HIPAA compliance for healthcare AI systems handling PHI.",
+  "version": "1.9.1"
+}
