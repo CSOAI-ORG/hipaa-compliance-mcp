@@ -273,21 +273,24 @@ class TestMinimumNecessaryCheck:
 
 class TestPredictRiskNeural:
     def test_fallback_when_no_neural(self):
-        result = srv.predict_risk_neural("Test System")
+        with patch.object(srv, "_neural_net", None):
+            result = srv.predict_risk_neural("Test System")
         assert "risk_level" in result
         assert result["confidence"] == "low"
         assert "note" in result
 
     def test_fallback_includes_factors(self):
-        result = srv.predict_risk_neural(
-            "AI Diagnostic", uses_biometric=True, uses_health_data=True
-        )
+        with patch.object(srv, "_neural_net", None):
+            result = srv.predict_risk_neural(
+                "AI Diagnostic", uses_biometric=True, uses_health_data=True
+            )
         assert result["factors"]["uses_biometric"] is True
         assert result["factors"]["uses_health_data"] is True
 
 
 class TestNeuralInsights:
     def test_fallback_status(self):
-        result = srv.neural_insights()
+        with patch.object(srv, "_neural_net", None):
+            result = srv.neural_insights()
         assert result["status"] == "fallback"
         assert "note" in result
